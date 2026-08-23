@@ -1,23 +1,117 @@
 aid: interprice-technologies
 name: InterPrice Technologies
-description: 'InterPrice Technologies is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  InterPrice Technologies, Inc. was a New York City debt capital markets fintech that gave
+  corporate treasury teams a single web platform for new-issue financing decisions. Founded by
+  Olga Chin and commercially launched in 2020, its treasury capital markets platform aggregated
+  the indicative pricing that banks and financing partners supplied for bonds, commercial paper,
+  loans and hedging, normalized it across currencies and products, and presented it in comparison
+  dashboards so CFOs and treasurers could read funding costs side by side instead of collecting
+  them by email and spreadsheet. The company was WBENC-certified as a woman-owned business,
+  raised roughly $9.8M — a $2.5M seed in March 2021 and a $7.3M Series A in November 2022 co-led
+  by Nasdaq Ventures and DRW Venture Capital with Bowery Capital participating — and named
+  HP Inc., McCormick & Company and Takeda Pharmaceuticals among its corporate treasury customers.
+  In March 2023 it announced bank API connectivity, but that was an inbound integration through
+  which relationship banks delivered pricing indications into the InterPrice platform for its own
+  tenants; no public developer portal, API reference, key issuance, or machine-readable
+  specification was ever published, and none appears anywhere in the 983 archived URLs captured
+  for the domain. The company wound down during 2025 — founder and chief executive Olga Chin
+  left in February 2025 and is now a managing director at Tradeweb, the last Wayback capture of
+  the site is 2025-01-26, and interpricetech.com now has an empty DNS delegation — so this
+  profile is retained as a historical record and there is no API surface to enrich.
 url: https://raw.githubusercontent.com/api-evangelist/interprice-technologies/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-tier-reason: defunct-no-api-surface
+x-status: defunct
+x-founded: '2020'
+x-shutdown-note: >-
+  Wound down during 2025. Founder and CEO Olga Chin's tenure ended February 2025 and she is now
+  a managing director at Tradeweb; the last Wayback capture of interpricetech.com is 2025-01-26
+  and the site's DNS was torn down thereafter. No bankruptcy, acquisition, or shutdown
+  announcement was found in public sources — the wind-down is evidenced by the deleted DNS zone,
+  the halt in archive captures, and the founder's departure, not by a company statement.
+x-domain-status: unresolvable
+x-domain-note: >-
+  interpricetech.com remains registered at GoDaddy (created 2019-05-28, registry expiry
+  2027-05-28) and the .com registry still delegates it to two Route 53 nameservers
+  (ns-935.awsdns-52.net, ns-1989.awsdns-56.co.uk), but the hosted zone behind them is gone: both
+  nameservers answer REFUSED, so every public resolver fails and no HTTP request to any
+  interpricetech.com host can complete. All 160 contract-discovery probes across ten hosts
+  returned curl exit 6 (could not resolve host), not an HTTP status. The domain is therefore
+  deliberately NOT wired as a Website pointer. Separately, interprice.com is not and never was
+  the company's domain — it was registered in 2002, sits with the registrar Media Elite Holdings,
+  and redirects to an unrelated advertising lander.
+x-venue-listing: >-
+  This company entered the network from the secondary-market harvest with
+  https://www.nasdaqprivatemarket.com/ wired as its Website. That is the trading venue's own
+  homepage, not an InterPrice property, and it does not even deep-link to an InterPrice listing;
+  it was removed on 2026-08-23 as false discoverability credit (roadmap#56, venue-listing-as-Website).
+  A probe-domain-security.py run on 2026-08-23 followed that pointer and wrote Nasdaq Private
+  Market's TLS/HSTS/SPF/DMARC posture into a DomainSecurity artifact attributed to InterPrice;
+  that artifact and its pointer were deleted.
+specificationVersion: '0.23'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Defunct
+- Financial Services
+- Fintech
+- Capital Markets
+- Debt Capital Markets
+- Corporate Treasury
+- Bonds
+- Pricing
+tags_raw:
+- Company
+- Defunct
+- Financial Services
+- FinTech
+- Capital Markets
+- Debt Capital Markets
+- Corporate Treasury
+- Bonds
+- Pricing
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-common:
-- type: Website
-  url: https://www.nasdaqprivatemarket.com/
+common: []
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    InterPrice Technologies wound down during 2025 and its only company domain,
+    interpricetech.com, now has an empty DNS delegation — the .com registry still points at two
+    Route 53 nameservers but both answer REFUSED, so all 160 contract-discovery probes across
+    ten hosts (root, www, api, app, demo, docs, developer, auth, addins, status) failed at
+    name resolution rather than returning any HTTP status, leaving no host to run discovery against.
+  evidence:
+  - url: https://interpricetech.com/
+    status: 0
+  - url: https://api.interpricetech.com/openapi.json
+    status: 0
+  - url: https://interpricetech.com/.well-known/agent-card.json
+    status: 0
+  - url: https://interpricetech.com/.well-known/agent.json
+    status: 0
+  - url: https://interpricetech.com/llms.txt
+    status: 0
+  - url: https://api.github.com/orgs/interprice
+    status: 404
+  - url: https://pypi.org/pypi/interprice/json
+    status: 404
+  - url: https://web.archive.org/web/20250126162047/https://interpricetech.com/
+    status: 200
+  - url: https://www.linkedin.com/company/interprice-technologies
+    status: 200
+  checked: '2026-08-23'

@@ -1,0 +1,108 @@
+generated: '2026-08-23'
+method: probed
+source: https://interpricetech.com/.well-known/
+host: https://interpricetech.com
+resolvable: false
+dns:
+  status: NXDOMAIN-equivalent (empty delegation)
+  resolvers_tried:
+  - system
+  - 8.8.8.8
+  registry_delegation:
+  - NS-935.AWSDNS-52.NET
+  - NS-1989.AWSDNS-56.CO.UK
+  authoritative_response: REFUSED
+  note: >-
+    The .com registry still delegates interpricetech.com to two Route 53 nameservers and the
+    GoDaddy registration is live through 2027-05-28, but the hosted zone behind them has been
+    deleted: querying ns-935.awsdns-52.net (205.251.195.167) directly returns REFUSED with no
+    SOA, so every public resolver fails and no HTTP request to any interpricetech.com host can
+    complete. The status column below is 0 (connection never established), NOT an HTTP status.
+    Recorded with curl exit code 6, "could not resolve host", on all 160 probes.
+hosts:
+- host: https://interpricetech.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/openid-configuration
+    status: 0
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+  - path: /.well-known/api-catalog
+    status: 0
+  - path: /.well-known/ai-plugin.json
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /.well-known/agent.json
+    status: 0
+- host: https://www.interpricetech.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /.well-known/agent.json
+    status: 0
+- host: https://api.interpricetech.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/openid-configuration
+    status: 0
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /.well-known/agent.json
+    status: 0
+- host: https://app.interpricetech.com
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /.well-known/agent.json
+    status: 0
+- host: https://auth.interpricetech.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 0
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+hit_count: 0
+contract_discovery:
+  note: >-
+    STEP 0b was run in full against every candidate host. Ten hosts (root, www, api, app, demo,
+    docs, developer, auth, addins, status) x sixteen paths (/, /openapi.json, /openapi.yaml,
+    /swagger.json, /v1/openapi.json, /api-docs, /docs, /graphql, /llms.txt and the seven
+    .well-known paths above) = 160 probes, all failing at name resolution. No REST OpenAPI, no
+    GraphQL SDL, no MCP tools/list endpoint, and no A2A agent card could be reached because no
+    host resolves.
+  archive_check:
+    source: https://web.archive.org/cdx/search/cdx?url=interpricetech.com&matchType=domain
+    urls_captured: 983
+    last_snapshot: '2025-01-26'
+    developer_paths_found: none
+    note: >-
+      983 distinct archived URLs contain no /docs, /developers, /api, /reference, /swagger,
+      /openapi, /graphql or specification path of any kind. The archived site is a Laravel/Vue
+      single-page application (a landing page plus the authenticated /login product) and the
+      only non-asset paths are /login, /try-interprice, /robots.txt, /sitemap.xml and two PDF
+      policy files. Subdomains captured were auth., demo., admin-isolated.demo., addins.,
+      status., vpn., vpn.dev. and admin.int.dev. — login, VPN and internal surfaces, no
+      developer surface. The /.well-known/* captures dated 2024-07-03 and 2024-07-05
+      (ai-plugin.json, assetlinks.json, dnt-policy.txt, gpc.json, openid-configuration,
+      security.txt, trust.txt, plus ads.txt and app-ads.txt) are a third-party crawler sweeping
+      an SPA catch-all on two consecutive days, not documents the company served; they are
+      recorded here and explicitly NOT credited.
+  bank_api_note: >-
+    InterPrice announced "bank API connectivity" on 2023-03-28. Per the announcement this was an
+    inbound integration through which relationship banks delivered pricing indications into the
+    InterPrice platform for its own corporate treasury tenants — it named no developer portal,
+    no documentation URL, no key issuance and no specification, and nothing matching one was ever
+    archived. It is not evidence of a public API surface.
+x-evidence:
+  fetched: '2026-08-23'
+  note: >-
+    No pointer is emitted into apis.yml for this file. Nothing returned 200 on any InterPrice
+    host — nothing resolved at all — so there is no WellKnown, SecurityTxt or AgentCard surface
+    to assert. This artifact records a verified absence, not a presence.

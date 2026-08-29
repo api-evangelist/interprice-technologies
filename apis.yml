@@ -51,6 +51,17 @@ x-venue-listing: >-
   A probe-domain-security.py run on 2026-08-23 followed that pointer and wrote Nasdaq Private
   Market's TLS/HSTS/SPF/DMARC posture into a DomainSecurity artifact attributed to InterPrice;
   that artifact and its pointer were deleted.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.23'
 created: '2026-08-23'
 modified: '2026-08-23'

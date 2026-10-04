@@ -68,7 +68,7 @@ modified: '2026-08-23'
 tags:
 - Company
 - Defunct
-- Financial-Services
+- Financial Services
 - Fintech
 - Capital Markets
 - Debt Capital Markets
@@ -85,6 +85,7 @@ tags_raw:
 - Corporate Treasury
 - Bonds
 - Pricing
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
